@@ -60,7 +60,7 @@ public class WebComponentsBean {
    
     public String getResult(){
         if (firstName != null && lastName != null && email != null)
-            return "<p style=\background-color:yellow;widht:200px;" +
+            return "<p style=\"background-color:yellow;widht:200px;" +
                     "padding:5px\"> Nome: " + getFirstName() + 
                     "<br/>Sobrenome: " + getLastName() +
                     "<br/>e-MAIL: " + getEmail() + 
