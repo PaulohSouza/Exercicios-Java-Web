@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f= "http://xmlns.jcp.org/jsf/core" 
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Vendas Defensivos</title>
+         <h:outputStylesheet library="css" name="style.css" /> 
+    </h:head>
+    <h:body>
+        <h:form> 
+            <h1> Formulário de Registro </h1>
+            <p> Por Favor preencha o cadastro </p>
+            <h:panelGrid columns="3" style="height: 96px; width: 456px;">
+                <h:graphicImage library="images" name="firstname.png" height="30" width="140"/>
+                <h:inputText id="firstNameInputText" required="true"
+                             value="#{webComponentsBean.firstName}"
+                             size ="30" maxlength="30"
+                             requiredMessage="Por Favor preencha o Primeiro Nome" />
+                <h:message for="firstNameInputText" styleClass="error" />
+                <h:graphicImage library="images" name="lastname.jpg" height="30" width="140" />
+                 <h:inputText id="lastNameInputText" required="true"
+                             value="#{webComponentsBean.lastName}"
+                             size ="30" maxlength="30"
+                             requiredMessage="Por Favor preencha o Sobrenome" />
+                <h:message for="lastNameInputText" styleClass="error"/>
+                
+                 E-mail: 
+                 <h:inputText id="emailInputText" required="true"
+                              value="#{webComponentsBean.email}"
+                             size ="30" maxlength="30"
+                             requiredMessage="Por Favor preencha o Email" />
+                <h:message for="emailInputText" styleClass="error"/>
+            </h:panelGrid>
+                <br> </br>
+                <h:panelGrid>
+                <h:selectOneMenu id="booksSelectOneMenu" required ="true"
+                                 value="#{webComponentsBean.book}"
+                                 requiredMessage="Por Favor Selecione um Livro">
+                    <f:selectItem itemValue="CHTP" itemLabel="C Como Programar"/>
+                    <f:selectItem itemValue="JHTP" itemLabel="Java como Programar" />
+                    <f:selectItem itemValue="Delphi" itemLabel="Delphi 7" />
+                </h:selectOneMenu>  
+                  </h:panelGrid>
+                <h:message for="booksSelectOneMenu" styleClass="error" />
+                <p><h:outputLink value="http://www.deitel.com" >
+                        Clique aqui para buscar outros Livros
+                    </h:outputLink></p>
+        
+            <h:panelGroup >
+                <h:selectOneRadio id="osSelectOneRadio" required="true"
+                                  value="#{webComponentsBean.operatingSystem}"
+                                  requiredMessage="Por Favor Escolha um Sistema Operacional">
+                    <f:selectItem itemValue="Win10" itemLabel="Windows 10" />
+                    <f:selectItem itemValue="Linux" itemLabel="Linux/Ubuntu" />
+                    <f:selectItem itemValue="MAC" itemLabel="MAC" />
+                    <f:selectItem itemValue="Outros" itemLabel="Outros" />     
+                </h:selectOneRadio>
+            </h:panelGroup>
+                <h:commandButton value ="Registrar Empréstimo" />
+                <h:panelGrid >
+                <h:outputText escape="false" value="#{webComponentsBean.result}" />
+            </h:panelGrid>
+
+        </h:form>  
+    </h:body>
+</html>
+
