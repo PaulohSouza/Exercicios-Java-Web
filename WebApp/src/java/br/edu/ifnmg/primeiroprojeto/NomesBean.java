@@ -12,7 +12,7 @@ public class NomesBean implements Serializable{
     private String mensagem;
     
     public void dizerOla(){
-        mensagem = "Olá" + nome + " " + Sobrenome;
+        mensagem = "Olá " + nome + " " + Sobrenome;
     }
 
     public String getNome() {
