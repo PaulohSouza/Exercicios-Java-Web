@@ -8,7 +8,16 @@
     </h:head>
     <h:body>
         <p:fieldset legend="Objetos">
-            
+            <p:panelGrid>
+            <h:outputLabel value="Modelo" ></h:outputLabel>
+            <p:inputText value ="#{carroBean.carro.modelo}"></p:inputText>
+            <h:outputLabel value="Fabricante" ></h:outputLabel>
+            <p:inputText value ="#{carroBean.carro.fabricante}"></p:inputText>
+            <h:outputLabel value="Cor" ></h:outputLabel>
+            <p:inputText value ="#{carroBean.carro.cor}"></p:inputText>
+            <h:outputLabel value="Ano" ></h:outputLabel>
+            <p:inputMask mask= "9999"></p:inputMask>
+            </p:panelGrid>
         </p:fieldset>
     </h:body>
 </html>
